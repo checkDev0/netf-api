@@ -1,4 +1,4 @@
 // const baseURL = 'http://localhost:5173/?'
-const baseURL = 'https://front-rose.vercel.app/?'
+const baseURL = 'https://shawc.vercel.app/?'
 
 module.exports = baseURL

