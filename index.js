@@ -9,8 +9,8 @@ const corsOptions = {
   origin: [
     'http://localhost:5173',
     'http://localhost:5174',
-    'https://shaw-url.vercel.app',
-    'https://shawc.vercel.app',
+    'https://netf-url.vercel.app',
+    'https://netf-omega.vercel.app',
   ],
   credentials: true,
 }

